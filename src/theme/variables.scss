@@ -23,6 +23,26 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
+.ion-1x { font-size: 14px !important;}
+.ion-2x { font-size: 18px !important;}      
+
+.donateToast {
+  > div{
+      background-color:#488aff!important;
+      max-width: 60%!important;
+      text-align: center;
+      border-radius: 15px;
+      
+   }
+}            
+
+
+$fab-size: 70px;
+
+$tabs-md-tab-opacity: .5;
+
+$popover-md-width: 100px;
+
 
 
 // Named Color Variables

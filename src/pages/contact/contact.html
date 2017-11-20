@@ -1,17 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-title>Contact</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+  <ion-list no-lines>
+    <ion-list-header>Find me on</ion-list-header>
+    <button ion-item (click)="openWithSystemBrowser('https://www.github.com/opariffazman')">
+      <ion-icon name="logo-github" color="primary" item-start></ion-icon>
+      opariffazman
+    </button>
+    <button ion-item (click)="openWithSystemBrowser('https://plus.google.com/u/0/+AriffAzman')">
+      <ion-icon name="logo-googleplus" color="primary" item-start></ion-icon>
+      Ariff Azman
+    </button>
+    <button ion-item (click)="openWithSystemBrowser('https://m.facebook.com/opsedar')">
+      <ion-icon name="logo-facebook" color="primary" item-start></ion-icon>
+      Ariff Azman
+    </button>
+  </ion-list>
+  <ion-list no-lines>
+    <ion-list-header>Wanna buy me something? (No more ads)</ion-list-header>
+    <button ion-item (click)="presentToast()">
+      <ion-icon name="cafe" color="primary" item-start></ion-icon>
+      Donate 1$
+    </button>
+    <button ion-item (click)="presentToast()">
+      <ion-icon name="ice-cream" color="primary" item-start></ion-icon>
+      Donate 2$
+    </button>
+    <button ion-item (click)="presentToast()">
+      <ion-icon name="pizza" color="primary" item-start></ion-icon>
+      Donate 5$
+    </button>
   </ion-list>
 </ion-content>
+
+

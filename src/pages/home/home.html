@@ -1,17 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-title>CodeScanner &nbsp;<ion-icon name="qr-scanner"></ion-icon></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-list>
+    <ion-list-header class="ion-1x">
+    Start scanning codes to see the results. <ion-icon name="list-box"></ion-icon>
+    </ion-list-header>
+  </ion-list>
+  
+  <ion-card *ngIf="scannedCode != null">
+      <ion-card-content *ngFor="let inv of inventories">   
+        <p text-center class="ion-2x"><b> Records found </b><ion-icon name="checkmark-circle"></ion-icon></p> 
+        <p class="ion-2x">Barcode:</p>
+        <p class="ion-2x"><b> {{ inv.barcode }}</b></p>
+        <p class="ion-2x">Product Code: </p>
+        <p class="ion-2x"> <b> {{ inv.name }} </b></p>
+        <p class="ion-2x">Description: </p>
+        <p class="ion-2x"> <b> {{ inv.details }} </b></p>
+        <p class="ion-2x">Size(mm): </p>
+        <p class="ion-2x"> <b> {{ inv.sizes }} </b> </p>
+        <p class="ion-2x">JTA:</p>
+        <p class="ion-2x"> <b> {{ inv.jta }} </b></p>
+      </ion-card-content>
+      <ion-card-content *ngIf="inventories == null">    
+        <p text-center class="ion-2x"><b> No records found</b><ion-icon name="close-circle"></ion-icon></p>  
+        <p class="ion-2x">Barcode:</p>
+        <p class="ion-2x"><b> {{ scannedCode }}</b></p>
+      </ion-card-content>
+  </ion-card>
+  
+  <ion-fab right bottom>
+    <button (click)="scanCode()" ion-fab color="primary"><ion-icon name="qr-scanner"></ion-icon></button>
+  </ion-fab>  
+
 </ion-content>

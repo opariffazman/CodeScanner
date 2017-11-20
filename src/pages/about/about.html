@@ -1,11 +1,60 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-title>About</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+      <ion-list-header text-center no-lines>The Application</ion-list-header>
+      <p padding>CodeScanner &nbsp;<ion-icon name="qr-scanner"></ion-icon>&nbsp; is a fully functional code scanner app, built from scratch with ionic/cordova&nbsp;<ion-icon name="ionic"></ion-icon>&nbsp;platform and proudly open sourced. </p>
+      <ion-list-header text-center no-lines>The Developer</ion-list-header>
+      <p padding>CodeScanner &nbsp;<ion-icon name="qr-scanner"></ion-icon>&nbsp; is developed by Ariff Azman initially with a purpose that is to provide his father ease of use to scan barcodes at his work place. </p>
+      <ion-list-header text-center no-lines>The License</ion-list-header>
+      <p padding>CodeScanner &nbsp;<ion-icon name="qr-scanner"></ion-icon>&nbsp; is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>. 
+      <br> Copyright © 2017 Ariff Azman
+      <ion-list-header text-center no-lines>Credits</ion-list-header>
+      <p padding>CodeScanner &nbsp;<ion-icon name="qr-scanner"></ion-icon>&nbsp; would not be possible without the following great plugins and libraries.</p>
+  </ion-list>
 
+  
+
+  <ion-card>
+    <ion-card-content >
+        <ion-card-header><b>PhoneGap Plugin BarcodeScanner</b></ion-card-header>
+        <p padding>Cross-platform BarcodeScanner for Cordova / PhoneGap.</p>
+        <ion-buttons end>
+          <button ion-button clear icon-only (click)="openWithSystemBrowser('https://github.com/phonegap/phonegap-plugin-barcodescanner')">
+            <ion-icon name="logo-github"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content >
+        <ion-card-header><b>Cordova/PhoneGap Sqlite Storage</b></ion-card-header>
+        <p padding>Native interface to sqlite in a Cordova/PhoneGap plugin for Android, iOS, macOS, and Windows 10 (UWP), with API similar to HTML5/Web SQL API.</p>
+        <ion-buttons end>
+          <button ion-button clear icon-only (click)="openWithSystemBrowser('https://github.com/litehelpers/Cordova-sqlite-storage')">
+            <ion-icon name="logo-github"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content >
+        <ion-card-header><b>SQLite Porter Cordova/Phonegap Plugin</b></ion-card-header>
+        <p padding>This Cordova/Phonegap plugin can be used to import/export to/from a SQLite database using either SQL or JSON.</p>
+        <ion-buttons end>
+          <button ion-button clear icon-only (click)="openWithSystemBrowser('https://github.com/dpa99c/cordova-sqlite-porter')">
+            <ion-icon name="logo-github"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

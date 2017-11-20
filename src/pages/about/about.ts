@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
+
+import { PopoverPage } from '../popover/popover'
+
+import { InAppBrowser,InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-about',
@@ -7,8 +11,31 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  options : InAppBrowserOptions = {
+    location : 'no',
+    hidden : 'no',
+    clearcache : 'yes',
+    clearsessioncache : 'yes',
+    zoom : 'yes',
+    hardwareback : 'yes',
+    mediaPlaybackRequiresUserAction : 'no',
+    shouldPauseOnSuspend : 'no' 
+};
 
+  constructor(public popoverCtrl: PopoverController, public navCtrl: NavController, private iab: InAppBrowser) {
+
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+  public openWithSystemBrowser(url : string){
+    let target = "_system";
+    this.iab.create(url,target,this.options);
   }
 
 }
