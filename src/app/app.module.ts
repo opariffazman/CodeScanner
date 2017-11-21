@@ -24,6 +24,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+import { SmartAudio } from '../providers/smart-audio/smart-audio';
+import { NativeAudio } from '@ionic-native/native-audio';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +59,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SQLite,
     BarcodeScanner,
     InAppBrowser,
+    SmartAudio,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

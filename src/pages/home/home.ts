@@ -1,7 +1,7 @@
 import { DatabaseProvider } from './../../providers/database/database';
 
 import { Component } from '@angular/core';
-import { NavController, Platform, ToastController,PopoverController  } from 'ionic-angular';
+import { NavController, Platform, ToastController, PopoverController  } from 'ionic-angular';
 
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
@@ -27,13 +27,18 @@ export class HomePage {
     
   }
 
+  exitApp(){
+    this.platform.exitApp();
+  }
+
   scanCode() {
 
     this.options = {
       showFlipCameraButton : true, // iOS and Android
       showTorchButton : true, // iOS and Android
       prompt : "Place a barcode inside the scan area", // Android
-      resultDisplayDuration: 2500
+      resultDisplayDuration: 0,
+      disableSuccessBeep: true
     }
 
     this.barcodeScanner.scan(this.options).then(barcodeData => {
@@ -51,6 +56,7 @@ export class HomePage {
     this.databaseprovider.getAllInventory(this.scannedCode).then(data => {
       this.inventories = data;
     })
+    
   }
 
   presentToast() {

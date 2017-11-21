@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController, PopoverController } from 'ionic-angular';
+import { NavController, ToastController, PopoverController, Platform } from 'ionic-angular';
 
 import { PopoverPage } from '../popover/popover';
 
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
+import { PlatformRef } from '@angular/core/src/application_ref';
 
 @Component({
   selector: 'page-contact',
@@ -22,13 +23,17 @@ export class ContactPage {
     shouldPauseOnSuspend : 'no' 
 };
 
-  constructor(public popoverCtrl: PopoverController, private toastCtrl: ToastController, public navCtrl: NavController, private iab: InAppBrowser) {
+  constructor(public popoverCtrl: PopoverController, private toastCtrl: ToastController, public navCtrl: NavController, private iab: InAppBrowser, private platform:Platform) {
     
+  }
+
+  exitApp(){
+    this.platform.exitApp();
   }
 
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'Thank you for your support!',
+      message: 'To be implemented soon!',
       duration: 1500,
       position: 'middle',
       cssClass: "donateToast"

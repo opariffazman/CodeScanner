@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewController, NavController, NavParams } from 'ionic-angular';
+import { ViewController, NavController, NavParams, Platform } from 'ionic-angular';
 
 
 @Component({
@@ -7,9 +7,13 @@ import { ViewController, NavController, NavParams } from 'ionic-angular';
 })
 
 export class PopoverPage {
-  constructor(public viewCtrl: ViewController) {}
+  constructor(public viewCtrl: ViewController, private platform:Platform) {}
 
   close() {
     this.viewCtrl.dismiss();
+  }
+
+  exitApp(){
+    this.platform.exitApp();
   }
 }

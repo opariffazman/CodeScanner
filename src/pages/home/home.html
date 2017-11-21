@@ -18,20 +18,20 @@
   
   <ion-card *ngIf="scannedCode != null">
       <ion-card-content *ngFor="let inv of inventories">   
-        <p text-center class="ion-2x"><b> Records found </b><ion-icon name="checkmark-circle"></ion-icon></p> 
-        <p class="ion-2x">Barcode:</p>
+        <p text-center class="ion-2x"><ion-icon name="clipboard"></ion-icon><b> Records found </b><ion-icon name="checkmark-circle" color="secondary"></ion-icon></p> 
+        <p class="ion-2x"><ion-icon name="resize"></ion-icon> Size(MM)</p>
+        <p class="ion-2x"><b> {{ inv.sizes }} </b> </p>
+        <p class="ion-2x"><ion-icon name="ios-paper"></ion-icon> Description</p>
+        <p class="ion-2x"><b> {{ inv.details }} </b></p>
+        <p class="ion-2x"><ion-icon name="ios-search"></ion-icon> JTA</p>
+        <p class="ion-2x"><b> {{ inv.jta }} </b></p>
+        <p class="ion-2x"><ion-icon name="ios-barcode"></ion-icon> Barcode</p>
         <p class="ion-2x"><b> {{ inv.barcode }}</b></p>
-        <p class="ion-2x">Product Code: </p>
-        <p class="ion-2x"> <b> {{ inv.name }} </b></p>
-        <p class="ion-2x">Description: </p>
-        <p class="ion-2x"> <b> {{ inv.details }} </b></p>
-        <p class="ion-2x">Size(mm): </p>
-        <p class="ion-2x"> <b> {{ inv.sizes }} </b> </p>
-        <p class="ion-2x">JTA:</p>
-        <p class="ion-2x"> <b> {{ inv.jta }} </b></p>
+        <p class="ion-2x"><ion-icon name="pricetags"></ion-icon> Product Code</p>
+        <p class="ion-2x-red"><b> {{ inv.name }} </b></p>
       </ion-card-content>
       <ion-card-content *ngIf="inventories == null">    
-        <p text-center class="ion-2x"><b> No records found</b><ion-icon name="close-circle"></ion-icon></p>  
+        <p text-center class="ion-2x"><ion-icon name="clipboard"></ion-icon><b> No records found </b><ion-icon name="close-circle" color="danger"></ion-icon></p>  
         <p class="ion-2x">Barcode:</p>
         <p class="ion-2x"><b> {{ scannedCode }}</b></p>
       </ion-card-content>

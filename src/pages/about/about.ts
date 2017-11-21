@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, PopoverController } from 'ionic-angular';
+import { NavController, PopoverController, Platform } from 'ionic-angular';
 
 import { PopoverPage } from '../popover/popover'
 
@@ -22,8 +22,12 @@ export class AboutPage {
     shouldPauseOnSuspend : 'no' 
 };
 
-  constructor(public popoverCtrl: PopoverController, public navCtrl: NavController, private iab: InAppBrowser) {
+  constructor(public popoverCtrl: PopoverController, public navCtrl: NavController, private iab: InAppBrowser, private platform:Platform) {
 
+  }
+
+  exitApp(){
+    this.platform.exitApp();
   }
 
   presentPopover(myEvent) {

@@ -23,8 +23,16 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
-.ion-1x { font-size: 14px !important;}
-.ion-2x { font-size: 18px !important;}      
+.ion-1x { font-size: 14px !important; }
+.ion-1x-gray { font-size: 14px !important; color:#818181 !important;}
+.ion-2x { font-size: 18px !important;}    
+.ion-2x-red { font-size: 18px !important; color:#f53d3d !important;}    
+
+
+
+p, ion-card-header{
+  color:#3a3a3a !important;
+}
 
 .donateToast {
   > div{
@@ -36,12 +44,11 @@ $app-direction: ltr;
    }
 }            
 
-
 $fab-size: 70px;
 
 $tabs-md-tab-opacity: .5;
 
-$popover-md-width: 100px;
+$popover-md-width: 150px;
 
 
 
